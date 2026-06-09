@@ -1,0 +1,16 @@
+// Common Js Ka part
+
+// const res = require('./testModuleCommonJs/Math');
+// const {add,subtract} = require('./testModuleCommonJs/Math');
+// console.log(res.add(9,3));
+// console.log(res.subtract(9,13));
+// console.log(add(9,3));
+// console.log(subtract(9,13));
+
+// ES Module Ka part to use that change the type to module in package.json file
+// Are they both module ? Yes they are both module but the way we import them is different. for default export we can import it with any name we want but for named exports we have to import them with the same name as they are exported.
+import {add,subtract} from './testModuleESModule/Math.js';
+import multi from './testModuleESModule/Math.js';
+console.log(multi(4,5));
+console.log(add(4,5));
+console.log(subtract(4,5));
