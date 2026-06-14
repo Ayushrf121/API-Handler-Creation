@@ -16,9 +16,9 @@ export default function App5() {
                 avatar_url,
                 name,
                 login,
-                bio,
                 followers,
                 following,
+                bio,
                 public_repos,
                 location
             } = res.data;
@@ -29,6 +29,7 @@ export default function App5() {
             });
         } catch (error) {
             alert('User Does not Exist!');
+            console.log(error);
         }finally{
             setLoader(false);
         }
@@ -49,6 +50,7 @@ export default function App5() {
                         <img src={profile.picture} alt={profile.profileName} className='flex items-center justify-center w-56 h-56 rounded-[120px]' />
                         <span className='font-[Georgia] text-xl underline '>{profile.name}</span>
                         <span className='text-red-800'>{profile.profileName}</span>
+                        <p className='w-80 flex items-center justify-center pl-5 text-green-500'>{profile.bio}</p>
                         <div className='flex gap-1 '>
                             <span  className='text-[18px]'>Followers:</span>
                             <span className='font-bold text-blue-600 text-[18px]'>{profile.followers}</span>
