@@ -47,7 +47,6 @@ export default function App6() {
     try {
       if (res.data.success) {
         setStudents(res.data.data);
-        console.log(res.data.data);
       }
     } catch (error) {
       console.log(error);
