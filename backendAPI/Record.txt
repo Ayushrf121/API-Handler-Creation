@@ -14,3 +14,38 @@ import multi from './testModuleESModule/Math.js';
 console.log(multi(4,5));
 console.log(add(4,5));
 console.log(subtract(4,5));
+
+
+
+
+
+
+
+
+
+
+
+
+<div className='flex flex-col border-2 p-4 items-center'>
+                    <h1 className='text-2xl font-bold'>Get Details</h1>
+                    {
+                        details.length > 0 ? details.map((emp) => {
+                            return (
+                                <div className='flex gap-5 border-2 m-4 p-4'>
+                                    <div key={emp._id}>
+                                        <p title='Employee Name' className='text-2xl font-bold text-gray-800'>{emp.empName}</p>
+                                        <a href='mailto:' className='text-gray-700 underline' title='email'>{emp.email}</a>
+                                        <p title='Phone Number' className='text-gray-700'>{emp.pNo}</p>
+                                        <p>Salary: ₹{emp.salary}</p>
+                                        <div className='flex gap-2'>
+                                            <button onClick={() => editDetails(emp)} className='bg-green-400 active:bg-green-600 p-2 px-6 font-bold text-white rounded-2xl shadow-md shadow-black'>Edit</button>
+                                            <button onClick={() => deleteEmp(emp._id)} className='bg-red-400 active:bg-red-600 p-2 px-6 font-bold text-white rounded-2xl shadow-md shadow-black'>Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }) :
+                            <span className='text-[19px] text-red-600'>No details Found click button to refresh</span>
+                    }
+                    <button onClick={getDetails} className='bg-blue-400 active:bg-blue-600 p-4 px-4 rounded-2xl shadow-md shadow-black'>Get Details</button>
+                </div>

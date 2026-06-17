@@ -16,6 +16,10 @@ const schema = new mongoose.Schema({
         required: true,
         minLength: 10,
         minLength: 10,
+    },
+    salary:{
+        type:Number,
+        required:true
     }
 })
 
