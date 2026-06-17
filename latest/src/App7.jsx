@@ -4,7 +4,27 @@ import axios from 'axios';
 export default function App7() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [details, setDetails] = useState([]);
+    const [editId, setEditId] = useState(null);
+    const updateEmp = async (data) => {
+        try {
+            const res = await axios.put(`http://localhost:5000/api/employees/updateEmployee/${editId}`, data);
+            if (res.data.success) {
+                alert(res.data.message);
+                getDetails();
+                reset();
+                setEditId(null);
+                return;
+            }
+        } catch (error) {
+            alert("Error in updating the request");
+            return;
+        }
+    }
     const onSubmit = async (data) => {
+        if (editId) {
+            await updateEmp(data);
+            return;
+        }
         try {
             const res = await axios.post('http://localhost:5000/api/employees/setDetails', data);
             if (res.data.success) {
@@ -25,8 +45,29 @@ export default function App7() {
             console.log(error);
         }
     }
+    const editDetails = async (emp) => {
+        setEditId(emp._id);
+        reset(
+            {
+                empName: emp.empName,
+                email: emp.email,
+                pNo: emp.pNo
+            }
+        );
+    }
+    const deleteEmp = async(id)=>{
+        try {
+            const res = await axios.delete(`http://localhost:5000/api/employees/removeEmp/${id}`);
+            if(res.data.success){
+                alert(res.data.message);
+                getDetails();
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
-        <div className='flex p-4 items-center justify-center border-2 bg-gray-200 h-screen gap-4'>
+        <div className='flex p-4 items-center justify-center border-2 bg-gray-200  gap-4'>
             <div className='flex flex-col p-4 items-center justify-center border-2'>
                 <h1 className='text-2xl font-bold'>Employee Detail Form</h1>
                 <form className='flex flex-col gap-4 items-center justify-center' onSubmit={handleSubmit(onSubmit)}>
@@ -68,6 +109,10 @@ export default function App7() {
                                     <p title='Employee Name' className='text-2xl font-bold text-gray-800'>{emp.empName}</p>
                                     <a href='mailto:' className='text-gray-700 underline' title='email'>{emp.email}</a>
                                     <p title='Phone Number' className='text-gray-700'>{emp.pNo}</p>
+                                    <div className='flex gap-2'>
+                                        <button onClick={() => editDetails(emp)} className='bg-green-400 active:bg-green-600 p-2 px-6 font-bold text-white rounded-2xl shadow-md shadow-black'>Edit</button>
+                                    <button onClick={() => deleteEmp(emp._id)} className='bg-red-400 active:bg-red-600 p-2 px-6 font-bold text-white rounded-2xl shadow-md shadow-black'>Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         )

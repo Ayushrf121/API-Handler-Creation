@@ -27,3 +27,48 @@ export const getEmployee = async (req, res) => {
         });
     }
 }
+export const updateEmployee = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const emp = await empModel.findByIdAndUpdate(id, req.body);
+        if (!emp) {
+            res.status(404).json({
+                success: false,
+                message: "Employee not found"
+            });
+        } else {
+            res.status(200).json({
+                success: true,
+                message: "Employee Details updated successfully"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
+export const removeEmployee = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const emp = await empModel.findByIdAndDelete(id);
+        if (emp) {
+            res.status(200).json({
+                success: true,
+                message: "Employee removed from database successfully"
+            });
+        } else {
+            res.status(404).json({
+                success: false,
+                message: "Employee not found"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+}
