@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 const app = express();
 app.use(cors());
+// Converts JSON body into JavaScript object.
 app.use(express.json()); // to parse the incoming request body as JSON
 const port = 5000;
 

@@ -100,6 +100,7 @@ export default function App7() {
                 setSearch={setSearch}
                 employees={details}
             />
+            
             <section className='flex p-4 items-center justify-center border-2 bg-gray-200  gap-4'>
 
                 <div className='flex flex-col p-4 items-center justify-center border-2'>
