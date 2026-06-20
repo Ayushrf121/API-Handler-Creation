@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
-import App8 from './App8';
+import App9 from './App9';
+// import App8 from './App8';
 // import App7 from './App7'
 // import App6 from './App6'
 // import App from './App.jsx'
@@ -21,7 +22,8 @@ createRoot(document.getElementById('root')).render(
       {/* <App5/> */}
       {/* <App6/> */}
       {/* <App7 /> */}
-      <App8/>
+      {/* <App8/> */}
+      <App9/>
     </BrowserRouter>
   </StrictMode>,
 )
