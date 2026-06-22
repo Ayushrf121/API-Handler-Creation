@@ -14,7 +14,12 @@ const authschema = new mongoose.Schema({
     },
     password:{
         type: String,
-        required: {value:true,message:"Password is required"}
+        default: null
+    },
+    provider:{
+        type: String,
+        enum:['local','google'],
+        default:'local'
     },
     checkbox:{
         type: Boolean,

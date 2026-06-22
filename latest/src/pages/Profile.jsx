@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function Profile() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const onsubmit = ()=>{
+    const onsubmit = () => {
         localStorage.removeItem("token");
         navigate('/login');
     }
@@ -27,7 +27,6 @@ export default function Profile() {
                 });
 
                 setUser(res.data.user);
-                console.log(res.data.user);
 
             } catch (error) {
 

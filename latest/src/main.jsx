@@ -2,7 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
-import App9 from './App9';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import App10 from './App10';
+// import App9 from './App9';
 // import App8 from './App8';
 // import App7 from './App7'
 // import App6 from './App6'
@@ -13,7 +15,7 @@ import App9 from './App9';
 // import App5 from './App5.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
     <BrowserRouter>
       {/* <App /> */}
       {/* <App2 /> */}
@@ -23,7 +25,8 @@ createRoot(document.getElementById('root')).render(
       {/* <App6/> */}
       {/* <App7 /> */}
       {/* <App8/> */}
-      <App9/>
+      {/* <App9 /> */}
+      <App10/>
     </BrowserRouter>
-  </StrictMode>,
+  </GoogleOAuthProvider>
 )
