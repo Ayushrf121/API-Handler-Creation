@@ -21,7 +21,7 @@ app.use(express.json());
 
 // 2. Your Atlas connection string
 // Change this line in your server.js:
-const ATLAS_URI = "mongodb+srv://traversalgeu15_db_user:24151113@traversaleventauth.zjyopek.mongodb.net/sample_mflix?retryWrites=true&w=majority";
+// const ATLAS_URI = "";
 // This line will now work perfectly because 'mongoose' is defined above!
 mongoose.connect(ATLAS_URI)
   .then(() => console.log('Successfully connected to MongoDB Atlas!'))
