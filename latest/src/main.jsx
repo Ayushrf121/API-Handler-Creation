@@ -3,8 +3,9 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import App13 from './App13';
 // import App11 from './App11';
-import App12 from './App12';
+// import App12 from './App12';
 // import App10 from './App10';
 // import App9 from './App9';
 // import App8 from './App8';
@@ -30,7 +31,8 @@ createRoot(document.getElementById('root')).render(
       {/* <App9 /> */}
       {/* <App10/> */}
       {/* <App11/> */}
-      <App12/>
+      {/* <App12/> */}
+      <App13/>
     </BrowserRouter>
   </GoogleOAuthProvider>
 )
