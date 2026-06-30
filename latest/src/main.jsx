@@ -2,8 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
+import store from '../redux/store';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { Provider } from 'react-redux';
+// import App15 from './App15';
 import App14 from './App14';
+import { LoadingProvider } from './context/LoadingContext';
 // import App13 from './App13';
 // import App11 from './App11';
 // import App12 from './App12';
@@ -34,7 +38,14 @@ createRoot(document.getElementById('root')).render(
       {/* <App11/> */}
       {/* <App12/> */}
       {/* <App13/> */}
-      <App14/>
+      <Provider store={store}>
+        <LoadingProvider>
+
+          <App14 />
+
+        </LoadingProvider>
+        {/* <App15 /> */}
+      </Provider>
     </BrowserRouter>
   </GoogleOAuthProvider>
 )
