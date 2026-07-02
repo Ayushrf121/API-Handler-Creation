@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-6e6492e9-e73e-4c82-b339-ec19a9f9bf27",
+  "object": "chat.completion",
+  "created": 1782964022,
+  "model": "llama-3.3-70b-versatile",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello, it seems there's been a mistake. I'm not Groq, I'm an AI assistant. I don't have personal experiences, but I can tell you about my capabilities. I can provide information on a wide range of topics, answer questions, and assist with tasks such as language translation, text summarization, and more. How can I help you today?"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "queue_time": 0.231999273,
+    "prompt_tokens": 44,
+    "prompt_time": 0.007393396,
+    "completion_tokens": 76,
+    "completion_time": 0.264661152,
+    "total_tokens": 120,
+    "total_time": 0.272054548
+  },
+  "usage_breakdown": null,
+  "system_fingerprint": "fp_45180df409",
+  "x_groq": {
+    "id": "req_01kwgeztkzeexsvkyh5dtwy1vh",
+    "seed": 1292596478
+  },
+  "service_tier": "on_demand"
+}
