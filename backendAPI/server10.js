@@ -30,8 +30,8 @@ async function testGroq() {
         model: "llama-3.3-70b-versatile",
         messages: [
             {
-                role: "user",
-                content: "Hello Groq! Tell me about yourself."
+                role: "developer",
+                content: "Hello Assistant! Tell me about yourself and the token limit of yours."
             }
         ]
     });
